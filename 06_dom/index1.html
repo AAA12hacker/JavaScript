@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abrar test</title>
+</head>
+<body style="background-color: #121111;color:white">
+<div class="parent">
+    <div class="day">mon</div>
+    <div class="day">tue</div>
+    <div class="day">wed</div>
+    <div class="day">thur</div>
+</div>
+</body>
+<script>
+    const parent=document.querySelector(".parent")
+
+    console.log(parent);
+    console.log(parent.children);
+    const dayOne=parent.children[1];
+    dayOne.style.backgroundColor="red";
+    for(let i=0;i<parent.children.length;i++){
+        console.log(parent.children[i].innerHTML)
+    }
+    // special properties to access first elemt last elemetn child of parent
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+
+    // you can access parent from the child
+    const childDay=document.querySelector(".day");
+    console.log(childDay)
+    console.log(childDay.parentElement)
+    // you can access sibling also of child
+    console.log(childDay.nextElementSibling.innerHTML)
+    // react works on this nodes list it counts next line also
+    console.log("NODES LIST",parent.childNodes)
+</script>
+</html>

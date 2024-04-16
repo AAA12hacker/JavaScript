@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="langauge">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    // add
+    function addCourseList(langName){
+        const li=document.createElement("li")
+        // this is not a optimize way to insert when 10000 of data are there because 
+        // it will traversal all
+        li.innerHTML=`${langName}`
+        document.querySelector(".langauge").appendChild(li)
+    }
+    addCourseList("python")
+    addCourseList("java")
+    function addCourseListOptimze(langName){
+        const li=document.createElement("li")
+        // it is optimize way to use appendChild as it will direclty add
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".langauge").appendChild(li)
+    }
+    addCourseList("typeScript")
+
+    // edit
+    // one way to edit
+    const secondLang=document.querySelector("li:nth-child(2)")
+    const newLi=document.createElement("li")
+    newLi.textContent="golang"
+    secondLang.replaceWith(newLi)
+    // othe way to edit
+    const firstLang=document.querySelector("li:first-child")
+    firstLang.outerHTML="<li>poo</li>"
+    // another way
+    const thirdLang=document.querySelector("li:nth-child(3)")
+    thirdLang.innerHTML="pushpa"
+
+    // remove
+    const lastLang=document.querySelector("li:last-child")
+    lastLang.remove()
+
+
+</script>
+</html>
