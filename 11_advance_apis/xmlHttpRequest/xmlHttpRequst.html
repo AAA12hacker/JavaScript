@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    
+</body>
+<script>
+    // to use XMLHttpRequest we need to make a object of it
+    const apiUrl="https://api.github.com/users/AAA12hacker"
+
+    const xhr=new XMLHttpRequest()
+    xhr.open("GET",apiUrl);
+    // to use this function we need to pass as a variable
+    xhr.onreadystatechange=function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState===4){
+            const response=JSON.parse(this.responseText)
+            console.log(response)
+        }
+    }
+    // this will give the status of the execution
+    console.log(xhr.readyState)
+    xhr.send()
+</script>
+</html>
