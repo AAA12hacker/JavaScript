@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Abrar Learning Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+// it will call the execution after every second
+let dateClear
+const setDate=(name)=>{
+    console.log(name,Date.now())
+}
+// we can also pass parameter in setInterval
+const startTheOperation=(name)=>{
+    dateClear=setInterval(setDate,1000,name)
+}
+
+// here dateClear is a giving a reference to the setInterval
+const clearIntervalHandler=()=>{
+    clearInterval(dateClear)
+}
+
+document.querySelector("#start").addEventListener("click",()=>{
+    startTheOperation("abrar")
+},false)
+document.querySelector("#stop").addEventListener("click",()=>{
+    clearIntervalHandler("abrar")
+},false)
+
+   
+</script>
+</html>
