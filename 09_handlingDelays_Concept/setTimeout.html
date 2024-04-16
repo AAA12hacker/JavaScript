@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Abrar Learning Javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeOut will occur only once it reaches in time and terminates
+    // function sayName(){
+    //     console.log("hero")
+    // }
+    // setTimeout(sayName,3000)
+
+    function changeChannel(){
+    const heading=document.querySelector("#heading")
+    heading.innerHTML="Abrar also learn node js"
+    }
+    const changeChannelClearTimeOut=setTimeout(changeChannel,3000)
+    // now when we click the stop button it will clear the timeout 
+    //and setTimeOut will remove from the stack
+    document.getElementById("stop").addEventListener('click',function(){
+        clearTimeout(changeChannelClearTimeOut)
+    })
+   
+</script>
+</html>
